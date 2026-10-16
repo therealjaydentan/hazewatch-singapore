@@ -1,1 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10243a">
+<title>HazeWatch Singapore — Know the air. Protect each other.</title>
+<style>
+:root{--navy:#10243a;--navy2:#183650;--ink:#15283b;--muted:#63758a;--line:#e1e8ef;--bg:#f3f6fa;--card:#fff;--blue:#2463eb;--teal:#0f766e;--amber:#a16207;--red:#b42318;--green:#16794b;--shadow:0 10px 30px rgba(18,38,63,.06)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:#1d55c5}button{font:inherit;cursor:pointer}.topbar{background:var(--navy);color:white;padding:22px max(20px,calc((100vw - 1180px)/2));display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;gap:13px;align-items:center}.logo{width:44px;height:44px;border-radius:13px;background:#dceafe;color:#163e73;display:grid;place-items:center;font-size:24px}.brand h1{font-size:20px;margin:0;letter-spacing:-.4px}.brand p{margin:2px 0 0;color:#bdcddd;font-size:12px}.live-pill{font-size:12px;border:1px solid #527087;border-radius:99px;padding:6px 10px;white-space:nowrap}.live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#73e2ac;margin-right:6px}.wrap{max-width:1180px;margin:0 auto;padding:26px 20px 50px}.intro{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:20px}.eyebrow{text-transform:uppercase;letter-spacing:1.5px;color:#52708a;font-weight:700;font-size:11px}.intro h2{font-size:clamp(25px,4vw,35px);letter-spacing:-1px;line-height:1.12;margin:7px 0}.intro p{color:var(--muted);margin:0;max-width:650px}.updated{text-align:right;color:var(--muted);font-size:12px;min-width:170px}.updated strong{display:block;color:var(--ink);font-size:13px}.banner{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:#eaf2ff;border:1px solid #cbdcff;border-radius:14px;margin:18px 0 22px;color:#23466d}.banner strong{display:block;margin-bottom:2px}.banner p{margin:0;font-size:13px}.grid{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:19px;box-shadow:var(--shadow);min-width:0}.card h3{font-size:15px;margin:0 0 4px;letter-spacing:-.2px}.sub{font-size:12px;color:var(--muted);margin:0}.hero-card{background:linear-gradient(135deg,#fff 0%,#f0f6ff 100%)}.metric-label{font-size:12px;color:var(--muted);font-weight:650}.metric{font-size:56px;letter-spacing:-2.5px;font-weight:760;line-height:1.15;margin:8px 0 6px}.status{display:inline-flex;align-items:center;gap:6px;border-radius:99px;padding:5px 10px;font-size:12px;font-weight:750;background:#edf1f5;color:#475569}.status.good{background:#e4f6ec;color:#166534}.status.moderate{background:#fff4cf;color:#854d0e}.status.unhealthy{background:#ffeadb;color:#9a3412}.status.very{background:#fee2e2;color:#991b1b}.status.hazard{background:#f3e8ff;color:#6b21a8}.hero-foot{border-top:1px solid var(--line);margin-top:18px;padding-top:12px;color:var(--muted);font-size:12px}.metric-row{display:flex;align-items:flex-end;justify-content:space-between;gap:12px}.metric-small{font-size:38px;font-weight:750;letter-spacing:-1.5px;margin:10px 0 4px}.unit{font-size:12px;color:var(--muted)}.region-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:16px}.region{background:white;border:1px solid var(--line);border-radius:14px;padding:15px}.region-top{display:flex;justify-content:space-between;align-items:center;gap:8px}.region h4{margin:0;font-size:14px}.region .num{font-size:30px;font-weight:750;letter-spacing:-1px;margin:10px 0 2px}.region .small-label{font-size:11px;color:var(--muted)}.region .status{font-size:10px;padding:4px 7px}.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin:27px 0 12px}.section-head h3{font-size:18px;margin:0;letter-spacing:-.4px}.section-head p{font-size:12px;color:var(--muted);margin:3px 0 0}.two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}.region-bars{display:grid;gap:13px;margin-top:17px}.bar-row{display:grid;grid-template-columns:68px 1fr 48px;gap:10px;align-items:center;font-size:12px}.track{height:9px;border-radius:99px;background:#edf1f5;overflow:hidden}.fill{height:100%;border-radius:99px;background:#4d83e7;width:0;transition:width .3s}.advice-list{display:grid;gap:12px;margin-top:15px}.advice{display:flex;gap:11px;align-items:flex-start}.advice-icon{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;background:#eef4fc;flex-shrink:0}.advice p{margin:0;font-size:13px;color:#4e6175}.advice strong{display:block;color:var(--ink);font-size:13px;margin-bottom:2px}.footer-note{margin-top:22px;padding:18px;border:1px solid var(--line);border-radius:14px;background:#f9fbfd;color:var(--muted);font-size:12px}.footer{padding:22px 0 0;color:#738399;font-size:12px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.links{display:flex;gap:13px;flex-wrap:wrap}.btn{border:1px solid #cfd9e5;background:white;color:var(--ink);padding:9px 12px;border-radius:10px;font-weight:650;font-size:12px}.btn:hover{background:#f7faff}.actions{display:flex;gap:8px;align-items:center}.notice{margin-top:12px;color:var(--muted);font-size:12px}.error{color:var(--red)}.skeleton{color:#91a0b1}.source-tag{display:inline-block;border:1px solid var(--line);border-radius:6px;padding:3px 6px;font-size:10px;color:var(--muted);margin-left:5px}
+@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}.hero-card{grid-column:span 2}.region-grid{grid-template-columns:repeat(3,1fr)}.two-col{grid-template-columns:1fr}.intro{align-items:flex-start;flex-direction:column}.updated{text-align:left}.topbar{align-items:flex-start}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.hero-card{grid-column:auto}.region-grid{grid-template-columns:1fr 1fr}.region{padding:12px}.metric{font-size:48px}.topbar{padding:17px 16px}.wrap{padding:20px 14px 36px}.live-pill{display:none}.section-head{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><div class="logo" aria-hidden="true">〰</div><div><h1>HazeWatch Singapore</h1><p>Know the air. Protect each other.</p></div></div>
+  <div class="live-pill"><span class="live-dot"></span><span id="connection">Connecting to official data…</span></div>
+</header>
+<main class="wrap">
+  <div class="intro">
+    <div><div class="eyebrow">Singapore air quality monitor</div><h2>See the haze situation clearly.</h2><p>Regional air-quality readings, practical health guidance, and reliable sources in one place.</p></div>
+    <div class="updated"><span>Last checked by this page</span><strong id="lastChecked">Checking…</strong><div id="sourceTime">Waiting for data feed</div></div>
+  </div>
+  <div class="banner"><div aria-hidden="true">ⓘ</div><div><strong>Use readings, not just the sky.</strong><p>Haze and air quality can vary by location and time. Check the latest official advice before exercising outdoors. This community project is not an official government service.</p></div></div>
 
+  <section class="grid" aria-label="Key air quality readings">
+    <article class="card hero-card">
+      <div class="metric-label">WEST REGION · 24-HOUR PSI</div>
+      <div class="metric-row"><div><div class="metric" id="westPsi">—</div><div id="westStatus" class="status">Waiting for data</div></div><div aria-hidden="true" style="font-size:38px">◉</div></div>
+      <div class="hero-foot">PSI is an index of several air pollutants. It is useful for understanding broader air quality, not a direct measurement of PM2.5 concentration.</div>
+    </article>
+    <article class="card">
+      <h3>West · 1-hour PM2.5</h3><p class="sub">Fine particulate matter</p>
+      <div class="metric-small" id="westPm">—</div><div class="unit">µg/m³</div>
+      <div class="hero-foot">Useful for understanding short-term PM2.5 levels. Follow official health advice.</div>
+    </article>
+    <article class="card">
+      <h3>Singapore overview</h3><p class="sub">Highest regional PSI reported</p>
+      <div class="metric-small" id="highestPsi">—</div><div id="highestRegion" class="unit">Waiting for regional data</div>
+      <div class="hero-foot">A regional reading may not represent the exact air outside your home or school.</div>
+    </article>
+  </section>
+
+  <div class="section-head"><div><h3>Regional readings</h3><p>Compare North, South, East, West and Central.</p></div><div class="actions"><button class="btn" id="refreshBtn">↻ Refresh now</button><button class="btn" id="shareBtn">Share this page</button></div></div>
+  <section class="region-grid" id="regionGrid" aria-label="Regional readings">
+    <article class="region"><h4>North</h4><div class="num skeleton">—</div><div class="small-label">Waiting for official data</div></article>
+    <article class="region"><h4>South</h4><div class="num skeleton">—</div><div class="small-label">Waiting for official data</div></article>
+    <article class="region"><h4>East</h4><div class="num skeleton">—</div><div class="small-label">Waiting for official data</div></article>
+    <article class="region"><h4>West</h4><div class="num skeleton">—</div><div class="small-label">Waiting for official data</div></article>
+    <article class="region"><h4>Central</h4><div class="num skeleton">—</div><div class="small-label">Waiting for official data</div></article>
+  </section>
+
+  <div class="two-col">
+    <section class="card" style="margin-top:20px">
+      <h3>Regional PSI comparison</h3><p class="sub">A quick visual comparison of the latest available values.</p>
+      <div class="region-bars" id="bars"><div class="skeleton">Waiting for regional readings…</div></div>
+      <p class="notice">Bars are scaled against PSI 300 for display. They are not a forecast.</p>
+    </section>
+    <section class="card" style="margin-top:20px">
+      <h3>What can I do?</h3><p class="sub">General guidance — always follow current official advice.</p>
+      <div class="advice-list">
+        <div class="advice"><div class="advice-icon">🏃</div><p><strong>When planning exercise</strong>Check current PM2.5 and official health advisories. Reduce or avoid strenuous outdoor activity when air quality is poor.</p></div>
+        <div class="advice"><div class="advice-icon">🏠</div><p><strong>Reduce exposure</strong>When haze is significant, spend more time indoors and keep windows closed if outdoor air is poor.</p></div>
+        <div class="advice"><div class="advice-icon">😷</div><p><strong>Need a mask?</strong>Follow NEA and MOH guidance. A well-fitted N95 can reduce fine-particle exposure when used correctly; ordinary surgical masks do not filter haze particles as effectively.</p></div>
+        <div class="advice"><div class="advice-icon">💙</div><p><strong>Look out for one another</strong>People with heart or lung conditions, older adults, children and pregnant people may be more vulnerable. Seek medical advice if unwell.</p></div>
+      </div>
+    </section>
+  </div>
+
+  <section class="card" style="margin-top:20px">
+    <h3>Understand the numbers</h3><p class="sub">PSI categories used in Singapore.</p>
+    <div class="region-grid" style="grid-template-columns:repeat(auto-fit,minmax(145px,1fr))">
+      <div class="region"><span class="status good">Good</span><div class="num" style="font-size:20px">0–50</div><div class="small-label">Lower pollution level</div></div>
+      <div class="region"><span class="status moderate">Moderate</span><div class="num" style="font-size:20px">51–100</div><div class="small-label">Check advice if sensitive</div></div>
+      <div class="region"><span class="status unhealthy">Unhealthy</span><div class="num" style="font-size:20px">101–200</div><div class="small-label">Take exposure precautions</div></div>
+      <div class="region"><span class="status very">Very unhealthy</span><div class="num" style="font-size:20px">201–300</div><div class="small-label">Follow official precautions</div></div>
+      <div class="region"><span class="status hazard">Hazardous</span><div class="num" style="font-size:20px">Above 300</div><div class="small-label">Serious air pollution</div></div>
+    </div>
+    <p class="notice">These categories are a simplified guide. Use NEA's latest health advice for decisions; do not treat this site as medical advice.</p>
+  </section>
+
+  <section class="card" style="margin-top:20px">
+    <h3>Official sources & further information</h3><p class="sub">Use these government sources to verify readings and advice.</p>
+    <div class="links" style="margin-top:13px">
+      <a href="https://www.haze.gov.sg/" target="_blank" rel="noopener noreferrer">NEA Haze Microsite ↗</a>
+      <a href="https://www.nea.gov.sg/our-services/pollution-control/air-pollution/faqs" target="_blank" rel="noopener noreferrer">NEA Air Pollution FAQs ↗</a>
+      <a href="https://www.moh.gov.sg/" target="_blank" rel="noopener noreferrer">Ministry of Health ↗</a>
+      <a href="https://www.moe.gov.sg/" target="_blank" rel="noopener noreferrer">Ministry of Education ↗</a>
+      <a href="https://data.gov.sg/" target="_blank" rel="noopener noreferrer">data.gov.sg ↗</a>
+    </div>
+    <p class="notice" id="feedNote">The page will attempt to retrieve readings from Singapore's open-data API. If data is unavailable, use the official NEA Haze Microsite directly.</p>
+  </section>
+  <div class="footer-note"><strong>Important:</strong> HazeWatch Singapore is an independent awareness project, not affiliated with NEA, MOH or MOE. Readings can be delayed, revised or temporarily unavailable. We do not predict school closures. For school decisions, rely on official school or MOE announcements.</div>
+  <footer class="footer"><span>HazeWatch Singapore · Community awareness prototype</span><span id="autoRefresh">Auto-refresh: every 5 minutes</span></footer>
+</main>
+<script>
+const API = {
+  psi: 'https://api-open.data.gov.sg/v2/real-time/api/psi',
+  pm25: 'https://api-open.data.gov.sg/v2/real-time/api/pm25'
+};
+const REGIONS = ['north','south','east','west','central'];
+const LABELS = {north:'North',south:'South',east:'East',west:'West',central:'Central'};
+const $ = id => document.getElementById(id);
+let lastSuccessfulAt = null;
+function formatTime(value){
+  if(!value) return 'Timestamp not provided';
+  const d = new Date(value);
+  if(Number.isNaN(d.getTime())) return String(value);
+  return d.toLocaleString('en-SG',{day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',hour12:true,timeZone:'Asia/Singapore'})+' SGT';
+}
+function psiCategory(v){
+  if(v===null || v===undefined || !Number.isFinite(Number(v))) return {label:'Unavailable',cls:''};
+  v=Number(v);
+  if(v<=50)return {label:'Good',cls:'good'};
+  if(v<=100)return {label:'Moderate',cls:'moderate'};
+  if(v<=200)return {label:'Unhealthy',cls:'unhealthy'};
+  if(v<=300)return {label:'Very unhealthy',cls:'very'};
+  return {label:'Hazardous',cls:'hazard'};
+}
+function numberValue(x){const n=Number(x);return x===null||x===undefined||x===''||!Number.isFinite(n)?null:n}
+function findRegionData(payload, readingType){
+  // data.gov.sg v2 returns data.items[0].readings[readingType], keyed by region.
+  const root=payload?.data;
+  if(!root) throw new Error('The API response did not contain a data object.');
+  const item=Array.isArray(root.items) ? root.items[0] : null;
+  if(!item || !item.readings) throw new Error('The expected latest readings were not found.');
+  const regional=item.readings[readingType];
+  if(!regional || typeof regional!=='object') throw new Error('The expected '+readingType+' values were not found.');
+  const values={};
+  for(const region of REGIONS) values[region]=numberValue(regional[region]);
+  return {values, timestamp:item.timestamp || item.updatedTimestamp || item.update_timestamp || null, updated:item.updatedTimestamp || item.update_timestamp || null};
+}
+async function fetchFeed(url, type){
+  const response=await fetch(url,{cache:'no-store'});
+  if(!response.ok) throw new Error(`${type} API returned HTTP ${response.status}`);
+  const payload=await response.json();
+  const result=findRegionData(payload, type==='PSI'?'psi_twenty_four_hourly':'pm25_one_hourly');
+  if(!Object.keys(result.values).length) throw new Error(`${type} feed contained no regional values`);
+  return result;
+}
+function makeStatus(v){
+  const c=psiCategory(v);
+  return `<span class="status ${c.cls}">${c.label}</span>`;
+}
+function renderRegions(psi,pm){
+  const grid=$('regionGrid');
+  grid.innerHTML=REGIONS.map(r=>{
+    const v=psi.values[r], p=pm.values[r], c=psiCategory(v);
+    return `<article class="region"><div class="region-top"><h4>${LABELS[r]}</h4>${makeStatus(v)}</div><div class="num">${v===null?'—':Math.round(v)}</div><div class="small-label">24-hour PSI</div><div style="margin-top:10px;border-top:1px solid var(--line);padding-top:8px;font-size:12px;color:var(--muted)">PM2.5: <strong style="color:var(--ink)">${p===null?'—':p}</strong> µg/m³</div></article>`;
+  }).join('');
+  $('bars').innerHTML=REGIONS.map(r=>{
+    const v=psi.values[r], pct=v===null?0:Math.max(0,Math.min(100,Number(v)/300*100));
+    return `<div class="bar-row"><span>${LABELS[r]}</span><div class="track"><div class="fill" style="width:${pct}%"></div></div><strong>${v===null?'—':Math.round(v)}</strong></div>`;
+  }).join('');
+  const w=psi.values.west, wp=pm.values.west;
+  $('westPsi').textContent=w===null?'—':Math.round(w);
+  $('westStatus').outerHTML=`<div id="westStatus">${makeStatus(w)}</div>`;
+  $('westPm').textContent=wp===null?'—':wp;
+  const available=REGIONS.map(r=>({r,v:psi.values[r]})).filter(x=>x.v!==null).sort((a,b)=>b.v-a.v);
+  $('highestPsi').textContent=available.length?Math.round(available[0].v):'—';
+  $('highestRegion').textContent=available.length?`${LABELS[available[0].r]} region · 24-hour PSI`:'No regional data available';
+}
+async function refresh(){
+  $('connection').textContent='Updating official data…';
+  $('feedNote').classList.remove('error');
+  try{
+    const [psi,pm]=await Promise.all([fetchFeed(API.psi,'PSI'),fetchFeed(API.pm25,'PM2.5')]);
+    renderRegions(psi,pm);
+    lastSuccessfulAt=new Date();
+    $('lastChecked').textContent=formatTime(lastSuccessfulAt);
+    $('sourceTime').textContent='Reading time: '+formatTime(psi.timestamp);
+    $('connection').textContent='Data feed connected';
+    $('feedNote').textContent='Readings retrieved from data.gov.sg open-data API. The API timestamp is shown above; this page checks for updates every 5 minutes.';
+  }catch(err){
+    $('connection').textContent='Live feed unavailable';
+    $('feedNote').classList.add('error');
+    $('feedNote').textContent='Could not load live data: '+err.message+'. This can happen if the API schema changes or browser access is blocked. Please verify readings at haze.gov.sg.';
+    $('sourceTime').textContent='Please use the official NEA site';
+  }
+}
+$('refreshBtn').addEventListener('click',refresh);
+$('shareBtn').addEventListener('click',async()=>{
+  const shareData={title:'HazeWatch Singapore',text:'Check Singapore haze readings and official health guidance on HazeWatch Singapore.',url:location.href};
+  try{
+    if(navigator.share) await navigator.share(shareData);
+    else if(navigator.clipboard){await navigator.clipboard.writeText(location.href);$('shareBtn').textContent='Link copied!';setTimeout(()=>$('shareBtn').textContent='Share this page',2000);}
+    else alert('Copy this page URL from your browser address bar to share it.');
+  }catch(e){/* User cancelled the share sheet. */}
+});
+refresh();
+setInterval(refresh,5*60*1000);
+</script>
+</body>
+</html>
