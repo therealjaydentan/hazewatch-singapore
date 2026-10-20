@@ -561,6 +561,7 @@ function getItemTimestamp(item, payload) {
   return null;
 }
 
+
 function extractFeed(payload, readingKey) {
   if (!payload || !payload.data || !Array.isArray(payload.data.items)) {
     throw new Error("The data source returned an unexpected format.");
@@ -570,7 +571,9 @@ function extractFeed(payload, readingKey) {
   let chosen = null;
 
   for (const item of items) {
-    if (item && item[readingKey] && typeof item[readingKey] === "object") {
+    const readings = item && item.readings;
+    if (readings && readings[readingKey] &&
+        typeof readings[readingKey] === "object") {
       chosen = item;
       break;
     }
@@ -580,7 +583,7 @@ function extractFeed(payload, readingKey) {
     throw new Error("No current readings were found in the data source.");
   }
 
-  const readings = chosen[readingKey];
+  const readings = chosen.readings[readingKey];
   const result = {};
 
   for (const region of REGIONS) {
@@ -588,6 +591,7 @@ function extractFeed(payload, readingKey) {
     const num = raw === null || raw === undefined || raw === ""
       ? null
       : Number(raw);
+
     result[region.key] = Number.isFinite(num) ? num : null;
   }
 
@@ -596,6 +600,7 @@ function extractFeed(payload, readingKey) {
     timestamp: getItemTimestamp(chosen, payload)
   };
 }
+
 
 async function fetchFeed(url, readingKey) {
   const controller = new AbortController();
