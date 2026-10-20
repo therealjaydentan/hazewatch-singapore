@@ -794,8 +794,22 @@ function updateTimestamps() {
   const latest = times.reduce((a, b) => a.getTime() >= b.getTime() ? a : b);
   $("sourceUpdated").textContent = "Latest source timestamp received: " + formatTime(latest.toISOString());
 }
+let lastManualRefresh = 0;
 
-async function refreshReadings() {
+async function refreshReadings(isAutomatic = false) {
+  if (state.busy) return;
+
+  const now = Date.now();
+
+  if (!isAutomatic && now - lastManualRefresh < 15000) {
+    setConnection("loading", "Please wait before refreshing again");
+    return;
+  }
+
+  if (!isAutomatic) {
+    lastManualRefresh = now;
+  }
+
   if (state.busy) return;
   state.busy = true;
   $("refreshBtn").disabled = true;
@@ -880,8 +894,8 @@ $("shareBtn").addEventListener("click", async () => {
 });
 
 renderOverview();
-refreshReadings();
-setInterval(refreshReadings, 5 * 60 * 1000);
+refreshReadings(true);
+setInterval(() => refreshReadings(true), 5 * 60 * 1000);
 </script>
 </body>
 </html>
