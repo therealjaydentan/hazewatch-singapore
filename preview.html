@@ -813,10 +813,11 @@ async function refreshReadings(isAutomatic = false) {
   if (state.busy) return;
   state.busy = true;
   $("refreshBtn").disabled = true;
-  $("refreshBtn").textContent = "Refreshing…";
+    $("refreshBtn").textContent = "Refreshing…";
   setConnection("loading", "Updating readings…");
 
-  const results = await Promise.allSettled([
+  try {
+    const results = await Promise.allSettled([
     fetchFeed(PSI_URL, "psi_twenty_four_hourly"),
     fetchFeed(PM25_URL, "pm25_one_hourly")
   ]);
@@ -853,14 +854,20 @@ async function refreshReadings(isAutomatic = false) {
     setConnection("error","Unable to load live readings");
   }
 
+    
   if (errors.length) {
     console.warn("HazeWatch data-feed issue:", errors.join(" | "));
   }
-
+} catch (error) {
+  console.warn("HazeWatch refresh error:", error);
+  setConnection("error", "Refresh failed — try again shortly");
+} finally {
   state.busy = false;
   $("refreshBtn").disabled = false;
   $("refreshBtn").textContent = "↻ Refresh readings";
 }
+}
+
 
 $("regionSelect").addEventListener("change", event => {
   state.selected = event.target.value;
