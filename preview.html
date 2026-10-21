@@ -874,8 +874,8 @@ $("regionSelect").addEventListener("change", event => {
   renderOverview();
 });
 
-$("refreshBtn").addEventListener("click", refreshReadings);
-
+$("refreshBtn").addEventListener("click", () => refreshReadings(false));
+  
 $("shareBtn").addEventListener("click", async () => {
   const shareData = {
     title: "HazeWatch Singapore",
