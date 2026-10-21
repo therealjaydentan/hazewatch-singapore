@@ -797,7 +797,10 @@ function updateTimestamps() {
 let lastManualRefresh = 0;
 
 async function refreshReadings(isAutomatic = false) {
-  if (state.busy) return;
+  if (state.busy) {
+    setConnection("loading", "Refresh already in progress — please wait");
+    return;
+  }
 
   const now = Date.now();
 
