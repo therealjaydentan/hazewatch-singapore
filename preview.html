@@ -592,7 +592,16 @@ function extractFeed(payload, readingKey) {
       ? null
       : Number(raw);
 
+
     result[region.key] = Number.isFinite(num) ? num : null;
+  }
+
+  const validCount = Object.values(result).filter(
+    value => value !== null && Number.isFinite(value)
+  ).length;
+
+  if (validCount === 0) {
+    throw new Error("The data source returned no usable regional readings.");
   }
 
   return {
