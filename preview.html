@@ -802,7 +802,7 @@ async function refreshReadings(isAutomatic = false) {
   const now = Date.now();
 
   if (!isAutomatic && now - lastManualRefresh < 15000) {
-    setConnection("loading", "Please wait before refreshing again");
+    setConnection("loading", "Please wait 15 seconds before refreshing again");
     return;
   }
 
