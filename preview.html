@@ -821,7 +821,6 @@ async function refreshReadings(isAutomatic = false) {
     lastManualRefresh = now;
   }
 
-  if (state.busy) return;
   state.busy = true;
   $("refreshBtn").disabled = true;
     $("refreshBtn").textContent = "Refreshing…";
@@ -857,15 +856,30 @@ async function refreshReadings(isAutomatic = false) {
   renderOverview();
   updateTimestamps();
 
+  const hasPreviousReadings = [...Object.values(state.psi), ...Object.values(state.pm25)]
+    .some(value =>
+      value !== null &&
+      value !== undefined &&
+      value !== "" &&
+      Number.isFinite(Number(value))
+    );
+
   if (successCount === 2) {
-    setConnection("","Data feeds connected");
+    setConnection("", "Data feeds connected");
   } else if (successCount === 1) {
-    setConnection("loading","Some readings unavailable");
+    setConnection(
+      "loading",
+      "One data feed unavailable — showing latest available readings"
+    );
+  } else if (hasPreviousReadings) {
+    setConnection(
+      "error",
+      "Refresh failed — showing last successful readings"
+    );
   } else {
-    setConnection("error","Unable to load live readings");
+    setConnection("error", "Unable to load live readings");
   }
 
-    
   if (errors.length) {
     console.warn("HazeWatch data-feed issue:", errors.join(" | "));
   }
